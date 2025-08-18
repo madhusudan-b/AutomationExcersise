@@ -123,6 +123,7 @@ public class useCases extends browserInIt {
 	public void close() {
 		
 		driver.close();
+		driver.quit();
 	}
 	
 	

@@ -121,7 +121,7 @@ public class useCases extends browserInIt {
 			
 	@AfterMethod
 	public void close() {
-		
+		driver.quit();
 		driver.close();
 	}
 	

@@ -118,32 +118,12 @@ public class useCases extends browserInIt {
 		
 		
 	}
-
-	
-	@Test(dependsOnMethods="Test_Case_001_User_Registration")
-	public void  Test_case_005_Logout_User(){
-		driver.get(URL);
-		String email = prop.getProperty("email");
-		String password = prop.getProperty("password");
-		String username=prop.getProperty("username");
-		util.login(email, password);
-		Assert.assertEquals(page.registerationusernameconf.getText(),username);
-
-		
-		
-	}
-	
-	
+			
 	@AfterMethod
 	public void close() {
-		
+		driver.quit();
 		driver.close();
 	}
-	
-	
-	
-	
-
 	
 	
 

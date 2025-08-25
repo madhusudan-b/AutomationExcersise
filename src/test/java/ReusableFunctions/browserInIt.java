@@ -39,7 +39,7 @@ public class browserInIt {
 			
 		}
 
-		switch (browser.toLowerCase()) {
+		switch (browser.toLowerCase() ) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();

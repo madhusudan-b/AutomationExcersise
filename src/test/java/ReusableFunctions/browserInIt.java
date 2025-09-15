@@ -4,11 +4,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverInfo;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+
+import com.fasterxml.jackson.databind.deser.Deserializers.Base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -18,28 +23,29 @@ public class browserInIt {
 	public WebDriver driver;
 	public String browser;
 	public String URL;
-	
+	public static Logger log= LogManager.getLogger(browserInIt.class);
+
 	public WebDriver setBrowser() {
-		String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\resource\\basicload.properties";
+		String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\basicload.properties";
 
 		try {
 			FileInputStream fis = new FileInputStream(filePath);
 			prop = new Properties();
 			prop.load(fis);
 			browser = prop.getProperty("browser");
-			URL = prop.getProperty("url");			
+			URL = prop.getProperty("url");
 
 		} catch (IOException e) {
-			
+
 			System.out.println("File not Loading");
 
 		}
 
 		finally {
-			
+
 		}
 
-		switch (browser.toLowerCase() ) {
+		switch (browser.toLowerCase()) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -50,13 +56,15 @@ public class browserInIt {
 			break;
 		case "edge":
 			WebDriverManager.edgedriver().setup();
-			driver= new EdgeDriver();
+			driver = new EdgeDriver();
 			break;
 
 		}
-		
+
 		return driver;
 
 	}
+	
+	
 
 }

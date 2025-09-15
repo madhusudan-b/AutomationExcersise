@@ -7,6 +7,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
+import static ReusableFunctions.TestListeners.test;
+
+
 import ReusableFunctions.*;
 
 public class useCases extends browserInIt {
@@ -22,10 +27,25 @@ public class useCases extends browserInIt {
 		util = new CommonFunction(driver, page);
 
 	}
+	
+	@AfterMethod
+	
+	public void closeBrowser() {
+		driver.quit();
+
+	}
+	
+	
+	/* 
+	 * Author:Madhusudan
+	 * Case info: this test case will test user registration
+	 * 
+	 * */
 
 	@Test
 	public void Test_Case_001_User_Registration() {
-
+		
+		log.info("Test_Case_001_User_Registration started");
 		driver.get(URL);
 		Assert.assertEquals(driver.getTitle(), PageAttribute.homePageTitle);
 		page.HomePageSignupButton.click();
@@ -62,25 +82,31 @@ public class useCases extends browserInIt {
 		 * "ACCOUNT DELETED!"); page.registerationusercntbtn.click();
 		 */
 		try {
-		 FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\resource\\basicload.properties");
+		 FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\basicload.properties");
 		    prop.setProperty("username", username);
 			prop.setProperty("email", email);
 			prop.setProperty("password", password);
 		    prop.store(fos, "Updated Runtime Credentials");
 		    
+		    fos.close(); 
+		    System.out.println("Data successfully saved in properties file.");
+		    
 		}
 		catch (Exception e) {
 			System.out.println("data not saved in File");
+			e.printStackTrace(); 
 			
 		}
 		
+		page.logoutbtn.click();
 		
 
 	}
 
 	@Test (dependsOnMethods="Test_Case_001_User_Registration")
 	public void Test_Case_002_User_Login_Correct_Email() {
-
+		
+		log.info("Test_Case_002_User_Login_Correct_Email");
 		driver.get(URL);
 		String email = prop.getProperty("email");
 		String password = prop.getProperty("password");
@@ -101,6 +127,7 @@ public class useCases extends browserInIt {
 		driver.get(URL);
 		util.login("maddy@gmail.com", "password");
 		Assert.assertEquals(page.wrongEmailPass.getText(),"Your email or password is incorrect!");
+		test.log(Status.INFO, "wrong password");
 		
 		
 	}
@@ -114,17 +141,14 @@ public class useCases extends browserInIt {
 		String username=prop.getProperty("username");
 		util.login(email, password);
 		Assert.assertEquals(page.registerationusernameconf.getText(),username);
+		
+		test.log(Status.INFO, "logout done");
 
 		
 		
 	}
 			
-	@AfterMethod
-	public void close() {
-		driver.quit();
-		driver.close();
-	}
-	
+
 	
 
 }

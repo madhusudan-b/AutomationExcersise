@@ -6,13 +6,19 @@
 	<artifactId>AutomationExcersise</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AutomationExcersise</name>
+
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.22.0</version> <!-- Replace with the desired version -->
+			<version>4.22.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -24,8 +30,10 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.7.0</version>
 		</dependency>
-
-
-
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.1</version>
+		</dependency>
 	</dependencies>
 </project>

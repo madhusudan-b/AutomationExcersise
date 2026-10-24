@@ -5,8 +5,13 @@
     <classes>
       <class name="webSiteUseCases.useCases">
         <methods>
+          <include name="Test_Case_001_User_Registration"/>
+          <include name="setBrowser"/>
           <include name="Test_case_003_Login_User_with_incorrect_email_and_password"/>
+          <include name="closeBrowser"/>
+          <include name="Test_Case_002_User_Login_Correct_Email"/>
           <include name="set_Values"/>
+          <include name="Test_case_004_Logout_User"/>
         </methods>
       </class> <!-- webSiteUseCases.useCases -->
     </classes>

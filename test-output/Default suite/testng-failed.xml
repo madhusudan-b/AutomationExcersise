@@ -6,6 +6,8 @@
       <class name="webSiteUseCases.useCases">
         <methods>
           <include name="Test_Case_001_User_Registration"/>
+          <include name="setBrowser"/>
+          <include name="Test_Case_002_User_Login_Correct_Email"/>
           <include name="set_Values"/>
         </methods>
       </class> <!-- webSiteUseCases.useCases -->

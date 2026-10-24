@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\Madhusudan\eclipse-workspace\AutomationExcersise\testng.xml</span>
+                    <span>C:\Users\Madhusudan\git\AutomationExcersise\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -172,13 +172,16 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Madhusudan\eclipse-workspace\AutomationExcersise\testng.xml</span>
+            <span class="header-content">C:\Users\Madhusudan\git\AutomationExcersise\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;ReusableFunctions.TestListeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;webSiteUseCases.useCases&quot;/&gt;
@@ -225,24 +228,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Test_Case_001_User_Registration')
 data.setCell(0, 2, 'webSiteUseCases.useCases')
-data.setCell(0, 3, 12395);
+data.setCell(0, 3, 15345);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Test_Case_002_User_Login_Correct_Email')
 data.setCell(1, 2, 'webSiteUseCases.useCases')
-data.setCell(1, 3, 7090);
+data.setCell(1, 3, 8170);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'Test_case_004_Logout_User')
 data.setCell(2, 2, 'webSiteUseCases.useCases')
-data.setCell(2, 3, 6707);
+data.setCell(2, 3, 7563);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'Test_case_003_Login_User_with_incorrect_email_and_password')
 data.setCell(3, 2, 'webSiteUseCases.useCases')
-data.setCell(3, 3, 4843);
+data.setCell(3, 3, 4860);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 35 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -275,47 +278,47 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Test_Case_001_User_Registration</span>
-                <span class="method-start">3418 ms</span>
+                <span class="method-start">3660 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">close</span>
-                <span class="method-start">15816 ms</span>
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">19018 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">set_Values</span>
-                <span class="method-start">16023 ms</span>
+                <span class="method-start">19363 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Test_case_003_Login_User_with_incorrect_email_and_password</span>
-                <span class="method-start">17439 ms</span>
+                <span class="method-start">21115 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">close</span>
-                <span class="method-start">22284 ms</span>
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">25977 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">set_Values</span>
-                <span class="method-start">22544 ms</span>
+                <span class="method-start">26337 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Test_Case_002_User_Login_Correct_Email</span>
-                <span class="method-start">24052 ms</span>
+                <span class="method-start">27672 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">close</span>
-                <span class="method-start">31144 ms</span>
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">35846 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">set_Values</span>
-                <span class="method-start">31313 ms</span>
+                <span class="method-start">36064 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Test_case_004_Logout_User</span>
-                <span class="method-start">32452 ms</span>
+                <span class="method-start">37349 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">close</span>
-                <span class="method-start">39162 ms</span>
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">44914 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
